@@ -33,6 +33,14 @@ export default function QueryProcessor(query: string): string {
     return (
       mult.toString()
     );
+  } if (query.toLowerCase().includes("power")) {
+    let lst = query.split(" ")
+    let num1 = parseInt(lst[2]);
+    let num2 = parseInt(lst[7].slice(0, 2));
+    let pow = num1**num2;
+    return (
+      pow.toString()
+    );
   } if (query.toLowerCase().includes("largest")) {
     let lst = query.split(": ");
     let nums = lst[1].slice(0, -1);
