@@ -22,12 +22,11 @@ export default function QueryProcessor(query: string): string {
     let nums = lst[1].slice(0, -1);
     let numLst = nums.split(",");
     let fin = 0
-    for (let num in numLst) {
-      if (parseInt(num) > fin) {
-        fin = parseInt(num);
+    numLst.forEach(function (value) {
+      if (parseInt(value) > fin) {
+        fin = parseInt(value);
       }
-      
-    }
+    }) 
     return fin.toString();
   }
 
