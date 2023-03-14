@@ -14,6 +14,11 @@ export default function QueryProcessor(query: string): string {
     let num1 = parseInt(lst[4].slice(0, 2));
     let num2 = parseInt(lst[2]);
     let sum = num1 + num2;
+    if (lst.length > 6) {
+      let num3 = parseInt(lst[6].slice(0, 2))
+      num1 = parseInt(lst[4]);
+      sum = num1 + num2 + num3;
+    }
     return (
       sum.toString()
     );
@@ -51,7 +56,9 @@ export default function QueryProcessor(query: string): string {
         fin = parseInt(value);
       }
     }) 
-    return fin.toString();
+    return (
+      fin.toString()
+    );
   }
 
   return "";
