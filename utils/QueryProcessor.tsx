@@ -17,6 +17,22 @@ export default function QueryProcessor(query: string): string {
     return (
       sum.toString()
     );
+  } if (query.toLowerCase().includes("minus")) {
+    let lst = query.split(" ")
+    let num1 = parseInt(lst[2]);
+    let num2 = parseInt(lst[4].slice(0, 2));
+    let minus = num1 - num2;
+    return (
+      minus.toString()
+    );
+  } if (query.toLowerCase().includes("multiplied")) {
+    let lst = query.split(" ")
+    let num1 = parseInt(lst[2]);
+    let num2 = parseInt(lst[5].slice(0, 2));
+    let mult = num1*num2;
+    return (
+      mult.toString()
+    );
   } if (query.toLowerCase().includes("largest")) {
     let lst = query.split(": ");
     let nums = lst[1].slice(0, -1);
