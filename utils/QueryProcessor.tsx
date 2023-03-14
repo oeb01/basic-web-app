@@ -18,9 +18,17 @@ export default function QueryProcessor(query: string): string {
       sum.toString()
     );
   } if (query.toLowerCase().includes("largest")) {
-    return (
-      ""
-    );
+    let lst = query.split(": ");
+    let nums = lst[1].slice(0, 11);
+    let numLst = nums.split(",");
+    let fin = 0
+    for (let num in numLst) {
+      if (parseInt(num) > fin) {
+        fin = parseInt(num);
+      }
+      
+    }
+    return fin.toString();
   }
 
   return "";
