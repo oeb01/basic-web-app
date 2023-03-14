@@ -9,6 +9,18 @@ export default function QueryProcessor(query: string): string {
     return (
       "esther bae"
     );
+  } if (query.toLowerCase().includes("plus")) {
+    let lst = query.split(" ")
+    let num1 = parseInt(lst[4].slice(0, 2));
+    let num2 = parseInt(lst[2]);
+    let sum = num1 + num2;
+    return (
+      sum.toString()
+    );
+  } if (query.toLowerCase().includes("largest")) {
+    return (
+      ""
+    );
   }
 
   return "";
