@@ -19,7 +19,7 @@ export default function QueryProcessor(query: string): string {
     );
   } if (query.toLowerCase().includes("largest")) {
     let lst = query.split(": ");
-    let nums = lst[1].slice(0, 11);
+    let nums = lst[1].slice(0, -1);
     let numLst = nums.split(",");
     let fin = 0
     for (let num in numLst) {
